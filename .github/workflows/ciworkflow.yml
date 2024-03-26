@@ -1,0 +1,13 @@
+name: setup and run test
+on: push
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: setup and run
+        run: make setup
+        run: 
+      - run: make test
+      - run: make lint
